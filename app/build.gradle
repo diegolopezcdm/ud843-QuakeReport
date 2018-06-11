@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply from: "$rootDir/utils.gradle"
 
 android {
     compileSdkVersion 23
@@ -10,6 +11,8 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+        buildConfigField 'String', 'SECRET_KEY', toJavaCodeString(SECRET_KEY)
+        buildConfigField 'String', 'MY_PASSWORD', toJavaCodeString(MY_PASSWORD)
     }
     buildTypes {
         release {
